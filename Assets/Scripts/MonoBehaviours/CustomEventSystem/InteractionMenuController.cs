@@ -32,7 +32,19 @@ public class InteractionMenuController : MonoBehaviour {
 		interactionMenu.SetActive (false); // then disables the menu in case it is displayed
 	}
 
-	void OnMouseEnter(){ //called when the mouse cursor hovers of the object collider
+	void OnMouseEnter()
+	{
+		float dist = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, objTransform.position);
+		if (dist <= hoverDectectionDistance) {
+			CustomEventManager.TriggerEvent ("ShowPointer");
+		}
+	}
+
+	void OnMouseExit(){
+		CustomEventManager.TriggerEvent ("HidePointer");
+	}
+
+	void OnMouseDown(){
 		// Calcuates the player-object distance
 		float dist = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, objTransform.position);
 		if (dist <= hoverDectectionDistance) {
@@ -48,6 +60,8 @@ public class InteractionMenuController : MonoBehaviour {
 		interactionMenu.SetActive (true);
 		// sends an event to alert other classes an interaction has started
 		CustomEventManager.TriggerEvent (eventName);
+		CustomEventManager.TriggerEvent ("HidePointer");
+		CustomEventManager.TriggerEvent ("DisablePointer");
 	}
 }
 

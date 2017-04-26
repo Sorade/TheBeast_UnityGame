@@ -17,7 +17,6 @@ public class HeadMovementDetector : MonoBehaviour {
 	void Update () {
 		currentAngle = transform.rotation.eulerAngles.y;
 		if (currentAngle != previousAngle) {
-			Debug.Log ("mvt");
 			CustomEventManager.TriggerEvent ("Movement");
 		}
 		previousAngle = transform.rotation.eulerAngles.y;
