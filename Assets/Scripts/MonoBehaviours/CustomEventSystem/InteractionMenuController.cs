@@ -10,8 +10,8 @@ public class InteractionMenuController : MonoBehaviour {
 
 	public GameObject interactionMenu; //the GameObject of the interaction menu
 	public int hoverDectectionDistance; //The maximum distance between the player and the object to display the menu
-	public float delayOnEnter; //The delay before displaying the menu, once the mouse hover is detected
 
+	private float delay = 0f; //The delay before displaying the menu, once the mouse hover is detected
 	private Transform objTransform; //the transform of the parent class used to calculated the player-object distance
 
 	void OnEnable()
@@ -32,7 +32,7 @@ public class InteractionMenuController : MonoBehaviour {
 		interactionMenu.SetActive (false); // then disables the menu in case it is displayed
 	}
 
-	void OnMouseEnter()
+	void OnMouseEnter() //shows a cursor clone to the player when the mouse hovers an interactable if the player is close enough
 	{
 		float dist = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, objTransform.position);
 		if (dist <= hoverDectectionDistance) {
@@ -48,18 +48,20 @@ public class InteractionMenuController : MonoBehaviour {
 		// Calcuates the player-object distance
 		float dist = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, objTransform.position);
 		if (dist <= hoverDectectionDistance) {
+			// Call movement event to shut any open interaction menus
+			CustomEventManager.TriggerEvent ("Movement");
 			// if the player is close enough starts the coroutine which will display the event
 			// after the delay has elapsed
-			StartCoroutine (ActivateMenu (delayOnEnter, "MouseHover"));
+			StartCoroutine (ActivateMenu (delay));
 		}
 	}
 
 	// a coroutine triggering the display of the menu which will be called each frame until completed
-	IEnumerator ActivateMenu (float delay, string eventName ){
+	IEnumerator ActivateMenu (float delay){
 		yield return new WaitForSeconds (delay); //waits a while before the menu is displayed
 		interactionMenu.SetActive (true);
 		// sends an event to alert other classes an interaction has started
-		CustomEventManager.TriggerEvent (eventName);
+		CustomEventManager.TriggerEvent ("MouseHover");
 		CustomEventManager.TriggerEvent ("HidePointer");
 		CustomEventManager.TriggerEvent ("DisablePointer");
 	}

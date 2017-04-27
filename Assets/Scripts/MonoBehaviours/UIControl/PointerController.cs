@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class PointerController : MonoBehaviour {
 
 	private Image pointerImage;
-	public bool isEnabled = true;
+	//Used to disable the toggling of the pointer without disactivating the component
+	//it is currently (28/04/17) used to prevent the pointer image from showing when the actual cursor is enabled
+	//during interactions.
+	public bool isEnabled = true; 
 
 	void OnEnable()
 	{
@@ -23,15 +26,10 @@ public class PointerController : MonoBehaviour {
 		CustomEventManager.StartListening ("DisablePointer",DisableImage);
 	}
 
-	// Use this for initialization
+
 	void Start () {
 		pointerImage = GetComponent<Image> ();
-		HideImage ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		HideImage (); //disables the image after the GetComponent<Image>() call otherwise GetComponent can't find disable components
 	}
 
 	void DisableImage(){

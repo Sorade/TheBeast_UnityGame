@@ -37,24 +37,4 @@ public class MouseManager : MonoBehaviour {
 		fpsController.EnableCursorVisibility();
 		fpsController.UnlockCursor();
 	}
-
-	void FlipCursorVisibility(){
-		fpsController.FlipCursorVisibility ();
-	}
-
-	void LockCursor(){
-		fpsController.LockCursor();
-	}
-
-	void UnlockCursor(){
-		fpsController.UnlockCursor();
-	}
-
-	void ShowCursor(){
-		fpsController.EnableCursorVisibility();
-	}
-
-	void HideCursor(){
-		fpsController.DisableCursorVisibility();
-	}
 }

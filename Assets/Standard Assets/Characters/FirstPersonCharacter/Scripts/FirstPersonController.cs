@@ -84,15 +84,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
-		public void FlipCursor(){
-			Cursor.visible = !Cursor.visible;
-			m_MouseLook.SetCursorLock (!m_MouseLook.lockCursor);
-		}
-
-		public void FlipCursorVisibility(){
-			Cursor.visible = !Cursor.visible;
-		}
-
 		public void UnlockCursor(){
 			m_MouseLook.SetCursorLock (false);
 		}
