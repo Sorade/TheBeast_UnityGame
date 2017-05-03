@@ -23,7 +23,7 @@ public class ControllerActivator : MonoBehaviour {
 	void OnDisable()
 	{
 		CustomEventManager.StopListening ("MouseHover", DisableActivation);
-		CustomEventManager.StartListening ("Movement",EnableActivation);
+		CustomEventManager.StopListening ("Movement",EnableActivation);
 	}
 
 	//enables the fpscontroller to allow the player to move again

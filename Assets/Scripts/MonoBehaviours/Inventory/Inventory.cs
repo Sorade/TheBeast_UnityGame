@@ -35,6 +35,8 @@ public class Inventory : MonoBehaviour
         // Go through all the item slots...
         for (int i = 0; i < items.Length; i++)
         {
+			Debug.Log (items [i]);
+			Debug.Log(itemToRemove);
             // ... if the item slot has the item to be removed...
             if (items[i] == itemToRemove)
             {

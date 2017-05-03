@@ -16,14 +16,16 @@ public class PointerController : MonoBehaviour {
 		CustomEventManager.StartListening ("ShowPointer",ShowImage);
 		CustomEventManager.StartListening ("HidePointer",HideImage);
 		CustomEventManager.StartListening ("Movement",EnableImage);
+		CustomEventManager.StartListening ("Movement",HideImage);
 		CustomEventManager.StartListening ("DisablePointer",DisableImage);
 	}
 	void OnDisable()
 	{
 		CustomEventManager.StopListening ("ShowPointer", ShowImage);
-		CustomEventManager.StartListening ("HidePointer",HideImage);
+		CustomEventManager.StopListening ("HidePointer",HideImage);
 		CustomEventManager.StopListening ("Movement", EnableImage);
-		CustomEventManager.StartListening ("DisablePointer",DisableImage);
+		CustomEventManager.StopListening ("Movement",HideImage);
+		CustomEventManager.StopListening ("DisablePointer",DisableImage);
 	}
 
 

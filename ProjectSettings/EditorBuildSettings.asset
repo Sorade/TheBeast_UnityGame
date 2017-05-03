@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Persistent.unity
   - enabled: 1
     path: Assets/Scenes/World_light_CustomES.unity
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity

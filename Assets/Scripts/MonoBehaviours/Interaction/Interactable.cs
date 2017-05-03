@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
 		defaultReactionCollection.React ();
     }
 
-
+	/*
 	void CheckInteractionDistance(){
 		//checking maxDistance has not been exceeded
 		float dist = Vector3.Distance (GameObject.FindGameObjectWithTag ("Player").transform.position, interactionLocation.position);
@@ -38,5 +38,5 @@ public class Interactable : MonoBehaviour
 		if (dist <= interactionDistance) {
 			//can interact
 		}
-	}
+	}*/
 }
