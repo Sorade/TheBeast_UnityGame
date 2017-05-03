@@ -12,5 +12,9 @@ public class InputMonitor : MonoBehaviour {
 		if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 ) {
 			CustomEventManager.TriggerEvent (movementEvent); //triggers the movement event when movement inputs are not 0
 		}
+
+		if (Input.GetKey("escape")){
+			Application.Quit();
+		}
 	}
 }
