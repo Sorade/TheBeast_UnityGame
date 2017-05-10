@@ -180,10 +180,10 @@ public class SaveData : ResettableScriptableObject
 
 	public void LoadFromDisk(){
 		Serializer.Deserialize (this.name + "Bool.dat", ref boolKeyValuePairLists);
-		//Serializer.Deserialize<int> (this.name + "Int.dat", intKeyValuePairLists);
-		//Serializer.Deserialize<string> (this.name + "String.dat", stringKeyValuePairLists);
-		//Serializer.Deserialize<Vector3> (this.name + "Vector3.dat", vector3KeyValuePairLists);
-		//Serializer.Deserialize<Quaternion> (this.name + "Quaternion.dat", quaternionKeyValuePairLists);
+		Serializer.Deserialize (this.name + "Int.dat", ref intKeyValuePairLists);
+		Serializer.Deserialize (this.name + "String.dat", ref stringKeyValuePairLists);
+		Serializer.Deserialize(this.name + "Vector3.dat", ref vector3KeyValuePairLists);
+		Serializer.Deserialize(this.name + "Quaternion.dat", ref quaternionKeyValuePairLists);
 	}
 
 	//need to be in an independent class to avoid stack overflows caused by having both the generic and overloaded method accessible
@@ -242,5 +242,24 @@ public class SaveData : ResettableScriptableObject
 			Deserialize (filename, ref data);
 		}
 
+		private void Deserialize(string filename, ref KeyValuePairLists<int> data)
+		{
+			Deserialize (filename, ref data);
+		}
+
+		private void Deserialize(string filename, ref KeyValuePairLists<string> data)
+		{
+			Deserialize (filename, ref data);
+		}
+
+		private void Deserialize(string filename, ref KeyValuePairLists<Vector3> data)
+		{
+			Deserialize (filename, ref data);
+		}
+
+		private void Deserialize(string filename, ref KeyValuePairLists<Quaternion> data)
+		{
+			Deserialize (filename, ref data);
+		}
 	}
 }

@@ -7,7 +7,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SaveToDisk : ScriptableObject {
 	public SaveData[] dataFiles;
-	public string[] saveFileNames;
 
 	public void Save(){
 		for (int i = 0; i < dataFiles.Length; i++) {

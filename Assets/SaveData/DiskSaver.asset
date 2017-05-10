@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataFiles:
   - {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
-  saveFileNames:
-  - Playerdata.dat
+  - {fileID: 11400000, guid: a0a895f9658a83144b3d1ff3d2527385, type: 2}
+  - {fileID: 11400000, guid: 64ef5318e4c3fb447ba637ec23033fd1, type: 2}

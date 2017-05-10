@@ -34,20 +34,23 @@ public abstract class Saver : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe the Save function to the BeforeSceneUnload event.
-        sceneController.BeforeSceneUnload += Save;
+        //sceneController.BeforeSceneUnload += Save;
+		CustomEventManager.StartListening("BeforeSceneUnload", Save);
 
         // Subscribe the Load function to the AfterSceneLoad event.
-        sceneController.AfterSceneLoad += Load;
+        //sceneController.AfterSceneLoad += Load;
+		CustomEventManager.StartListening("AfterSceneLoad", Load);
     }
 
 
     private void OnDisable()
     {
         // Unsubscribe the Save function from the BeforeSceneUnloud event.
-        sceneController.BeforeSceneUnload -= Save;
-
+        //sceneController.BeforeSceneUnload -= Save;
+		CustomEventManager.StopListening("BeforeSceneUnload", Save);
         // Unsubscribe the Load function from the AfterSceneLoad event.
-        sceneController.AfterSceneLoad -= Load;
+        //sceneController.AfterSceneLoad -= Load;
+		CustomEventManager.StopListening("AfterSceneLoad", Load);
     }
 
 
