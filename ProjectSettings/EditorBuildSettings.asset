@@ -5,9 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Persistent.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/World_light_CustomES.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cave.unity
+  - enabled: 0
+    path: Assets/Scenes/Main_Menu.unity
+  - enabled: 0
+    path: Assets/_Scenes/Persistent.unity

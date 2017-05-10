@@ -34,7 +34,7 @@ public class SceneController : MonoBehaviour
         faderCanvasGroup.alpha = 1f;
 
         // Write the initial starting position to the playerSaveData so it can be loaded by the player when the first scene is loaded.
-        playerSaveData.Save (PlayerMovement.startingPositionKey, initialStartingPositionName);
+        playerSaveData.Save (PlayerPositionLoader.startingPositionKey, initialStartingPositionName);
         
         // Start the first scene loading and wait for it to finish.
         yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));

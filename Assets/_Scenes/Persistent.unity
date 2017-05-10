@@ -327,8 +327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faderCanvasGroup: {fileID: 1708470355}
   fadeDuration: 1
-  startingSceneName: World_light_CustomES
-  initialStartingPositionName: InitialPos
+  startingSceneName: Main_Menu
+  initialStartingPositionName: Main_Menu_Pos
   playerSaveData: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
 --- !u!4 &353158847
 Transform:
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 1446455603}
   - component: {fileID: 1446455602}
   m_Layer: 0
-  m_Name: DataResetter
+  m_Name: DataController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,9 +984,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resettableScriptableObjects:
   - {fileID: 11400000, guid: fd02464d008c790478d9826aba7c7847, type: 2}
-  - {fileID: 11400000, guid: 48d6089c54f7ceb42b1f63276fdc2247, type: 2}
+  - {fileID: 11400000, guid: 64ef5318e4c3fb447ba637ec23033fd1, type: 2}
   - {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
-  - {fileID: 11400000, guid: 270c372e873657242ab00b2f602b468f, type: 2}
+  - {fileID: 11400000, guid: a0a895f9658a83144b3d1ff3d2527385, type: 2}
 --- !u!4 &1446455603
 Transform:
   m_ObjectHideFlags: 0
