@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 // Instance of this class can be created as assets.
 // Each instance contains collections of data from
@@ -77,7 +79,6 @@ public class SaveData : ResettableScriptableObject
     public KeyValuePairLists<string> stringKeyValuePairLists = new KeyValuePairLists<string>();
     public KeyValuePairLists<Vector3> vector3KeyValuePairLists = new KeyValuePairLists<Vector3>();
     public KeyValuePairLists<Quaternion> quaternionKeyValuePairLists = new KeyValuePairLists<Quaternion>();
-
 
     public override void Reset ()
     {
@@ -166,4 +167,80 @@ public class SaveData : ResettableScriptableObject
     {
         return Load (quaternionKeyValuePairLists, key, ref value);
     }
+
+
+	//Save/Load to/from disk methods
+	public void SaveToDisk(){
+		Serializer.Serialize (this.name + "Bool.dat", boolKeyValuePairLists);
+		Serializer.Serialize (this.name + "Int.dat", intKeyValuePairLists);
+		Serializer.Serialize (this.name + "String.dat", stringKeyValuePairLists);
+		Serializer.Serialize (this.name + "Vector3.dat", vector3KeyValuePairLists);
+		Serializer.Serialize (this.name + "Quaternion.dat", quaternionKeyValuePairLists);
+	}
+
+	public void LoadFromDisk(){
+		Serializer.Deserialize (this.name + "Bool.dat", ref boolKeyValuePairLists);
+		//Serializer.Deserialize<int> (this.name + "Int.dat", intKeyValuePairLists);
+		//Serializer.Deserialize<string> (this.name + "String.dat", stringKeyValuePairLists);
+		//Serializer.Deserialize<Vector3> (this.name + "Vector3.dat", vector3KeyValuePairLists);
+		//Serializer.Deserialize<Quaternion> (this.name + "Quaternion.dat", quaternionKeyValuePairLists);
+	}
+
+	//need to be in an independent class to avoid stack overflows caused by having both the generic and overloaded method accessible
+	public class Serializer{
+		
+		//generic serialization to disk method
+		public static void Serialize<T>(string filename, SaveData.KeyValuePairLists<T> data)
+		{
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file = File.Create(Application.dataPath + "/GameSave/" + filename); //Application.persistentDataPath
+			bf.Serialize (file, data);
+			file.Close();
+		}
+
+		//genereic deserialisation from disk method
+		public static void Deserialize<T>(string filename, ref KeyValuePairLists<T> data)
+		{
+			if (File.Exists (Application.persistentDataPath + "/GameSave/" + filename)) {
+				BinaryFormatter bf = new BinaryFormatter ();
+				FileStream file = File.Open(Application.dataPath + "/GameSave/" +  filename, FileMode.Open);
+				data = (KeyValuePairLists<T>) bf.Deserialize (file);
+				file.Close();
+			}
+		}
+
+		//serialisation to disk overloads
+		private void Serialize(string filename, SaveData.KeyValuePairLists<bool> data)
+		{
+			Serialize (filename, data);
+		}
+
+		private void Serialize(string filename, SaveData.KeyValuePairLists<int> data)
+		{
+			Serialize (filename, data);
+		}
+
+		private void Serialize(string filename, SaveData.KeyValuePairLists<string> data)
+		{
+			Serialize (filename, data);
+		}
+
+		private void Serialize(string filename, SaveData.KeyValuePairLists<Vector3> data)
+		{
+			Serialize (filename, data);
+		}
+
+		private void Serialize(string filename, SaveData.KeyValuePairLists<Quaternion> data)
+		{
+			Serialize (filename, data);
+		}
+
+
+		// deserialisation overloads
+		private void Deserialize(string filename, ref KeyValuePairLists<bool> data)
+		{
+			Deserialize (filename, ref data);
+		}
+
+	}
 }

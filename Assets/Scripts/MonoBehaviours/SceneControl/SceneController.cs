@@ -11,15 +11,16 @@ using UnityEngine.SceneManagement;
 // the player leaves them.
 public class SceneController : MonoBehaviour
 {
+	// Should be able to remove those and use the CustomEventManager instead
     public event Action BeforeSceneUnload;          // Event delegate that is called just before a scene is unloaded.
     public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
 
 
     public CanvasGroup faderCanvasGroup;            // The CanvasGroup that controls the Image used for fading to black.
     public float fadeDuration = 1f;                 // How long it should take to fade to and from black.
-    public string startingSceneName = "SecurityRoom";
+    public string startingSceneName;
                                                     // The name of the scene that should be loaded first.
-    public string initialStartingPositionName = "DoorToMarket";
+    public string initialStartingPositionName;
                                                     // The name of the StartingPosition in the first scene to be loaded.
     public SaveData playerSaveData;                 // Reference to the ScriptableObject which stores the name of the StartingPosition in the next scene.
     
@@ -33,7 +34,7 @@ public class SceneController : MonoBehaviour
         faderCanvasGroup.alpha = 1f;
 
         // Write the initial starting position to the playerSaveData so it can be loaded by the player when the first scene is loaded.
-        playerSaveData.Save (PlayerMovement.startingPositionKey, initialStartingPositionName);
+        playerSaveData.Save (PlayerPositionLoader.startingPositionKey, initialStartingPositionName);
         
         // Start the first scene loading and wait for it to finish.
         yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
@@ -62,7 +63,7 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine (Fade (1f));
 
         // If this event has any subscribers, call it.
-        if (BeforeSceneUnload != null)
+		if (BeforeSceneUnload != null) //Shoud be able to remove the conditional and use CustomEventManager.TriggerEvent("BeforeSceneUnload")
             BeforeSceneUnload ();
 
         // Unload the current active scene.
@@ -72,7 +73,7 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine (LoadSceneAndSetActive (sceneName));
 
         // If this event has any subscribers, call it.
-        if (AfterSceneLoad != null)
+		if (AfterSceneLoad != null)//Shoud be able to remove the conditional and use CustomEventManager.TriggerEvent("AfterSceneUnload")
             AfterSceneLoad ();
         
         // Start fading back in and wait for it to finish before exiting the function.

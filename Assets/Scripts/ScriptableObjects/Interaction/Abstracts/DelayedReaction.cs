@@ -35,7 +35,6 @@ public abstract class DelayedReaction : Reaction
     {
         // Wait for the specified time.
         yield return wait;
-
         // Then call the ImmediateReaction function which must be defined in inherting classes.
         ImmediateReaction ();
     }

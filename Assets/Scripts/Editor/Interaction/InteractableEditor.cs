@@ -16,9 +16,9 @@ public class InteractableEditor : EditorWithSubEditors<ConditionCollectionEditor
 
 
     private const float collectionButtonWidth = 125f;               // Width in pixels of the button for adding to the ConditionCollection array.
-    private const string interactablePropInteractionLocationName = "interactionLocation";
+    //private const string interactablePropInteractionLocationName = "interactionLocation";
                                                                     // Name of the Transform field for where the player walks to in order to Interact with the Interactable.
-	private const string interactablePropInteractionDistanceName = "interactionDistance";
+	//private const string interactablePropInteractionDistanceName = "interactionDistance";
 																	// Name of the Maximum distance between the player and the interactable.
 	private const string interactablePropConditionCollectionsName = "conditionCollections";
                                                                     // Name of the ConditionCollection array.
@@ -34,8 +34,8 @@ public class InteractableEditor : EditorWithSubEditors<ConditionCollectionEditor
 
         // Cache the SerializedProperties.
         collectionsProperty = serializedObject.FindProperty(interactablePropConditionCollectionsName);
-        interactionLocationProperty = serializedObject.FindProperty(interactablePropInteractionLocationName);
-		interactionDistanceProperty = serializedObject.FindProperty(interactablePropInteractionDistanceName);
+        //interactionLocationProperty = serializedObject.FindProperty(interactablePropInteractionLocationName);
+		//interactionDistanceProperty = serializedObject.FindProperty(interactablePropInteractionDistanceName);
         defaultReactionCollectionProperty = serializedObject.FindProperty(interactablePropDefaultReactionCollectionName);
         
         // Create the necessary Editors for the ConditionCollections.
@@ -67,8 +67,8 @@ public class InteractableEditor : EditorWithSubEditors<ConditionCollectionEditor
         CheckAndCreateSubEditors(interactable.conditionCollections);
         
         // Use the default object field GUI for the interactionLocation.
-        EditorGUILayout.PropertyField (interactionLocationProperty);
-		EditorGUILayout.PropertyField (interactionDistanceProperty);
+        //EditorGUILayout.PropertyField (interactionLocationProperty);
+		//EditorGUILayout.PropertyField (interactionDistanceProperty);
 
         // Display all of the ConditionCollections.
         for (int i = 0; i < subEditors.Length; i++)

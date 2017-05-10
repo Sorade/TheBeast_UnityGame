@@ -84,19 +84,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
-		public void FlipCursorVisibility(){
-			Cursor.visible = !Cursor.visible;
-			m_MouseLook.SetCursorLock (!m_MouseLook.lockCursor);
+		public void UnlockCursor(){
+			m_MouseLook.SetCursorLock (false);
+		}
+
+		public void LockCursor(){
+			m_MouseLook.SetCursorLock (true);
 		}
 
 		public void DisableCursorVisibility(){
 			Cursor.visible = false;
-			m_MouseLook.SetCursorLock (true);
 		}
 
 		public void EnableCursorVisibility(){
 			Cursor.visible = true;
-			m_MouseLook.SetCursorLock (false);
 		}
 
         private void PlayLandingSound()

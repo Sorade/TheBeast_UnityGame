@@ -24,6 +24,8 @@ MonoBehaviour:
   - {fileID: 114179025755859020}
   - {fileID: 114080648729898064}
   - {fileID: 114528607520137934}
+  - {fileID: 114971820754105870}
+  - {fileID: 114760062138116156}
 --- !u!114 &114000010533473472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +194,31 @@ MonoBehaviour:
   description: IsCalm
   satisfied: 0
   hash: 488116114
+--- !u!114 &114760062138116156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c14b7cdc8cc6347b3a5d48d05c9c85, type: 3}
+  m_Name: CampfireIsLit
+  m_EditorClassIdentifier: 
+  description: CampfireIsLit
+  satisfied: 0
+  hash: -1537147561
+--- !u!114 &114971820754105870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c14b7cdc8cc6347b3a5d48d05c9c85, type: 3}
+  m_Name: HasPickAxe
+  m_EditorClassIdentifier: 
+  description: HasPickAxe
+  satisfied: 0
+  hash: -1830983726

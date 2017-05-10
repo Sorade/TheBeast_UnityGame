@@ -17,22 +17,24 @@ public class MouseManager : MonoBehaviour {
 	{
 		//looks for the event sent by InteractionMenuController when an interaction has started
 		// and for the event sent on a player movement by the InputMonitor.
-		CustomEventManager.StartListening ("MouseHover",EnableCursorVisibility);
-		CustomEventManager.StartListening ("Movement",DisableCursorVisibility);
+		CustomEventManager.StartListening ("MouseHover",EnableCursor);
+		CustomEventManager.StartListening ("Movement",DisableCursor);
 	}
 	void OnDisable()
 	{
-		CustomEventManager.StopListening ("MouseHover", EnableCursorVisibility);
-		CustomEventManager.StopListening ("Movement", DisableCursorVisibility);
+		CustomEventManager.StopListening ("MouseHover", EnableCursor);
+		CustomEventManager.StopListening ("Movement", DisableCursor);
 	}
 
-	void DisableCursorVisibility(){
+	void DisableCursor(){
 		//Disables the cursor visibility and lock it to the screen center
 		fpsController.DisableCursorVisibility ();
+		fpsController.LockCursor ();
 	}
 
-	void EnableCursorVisibility(){
+	void EnableCursor(){
 		//Enables the cursor visibility and unlocks it to allow free movement on the screen
 		fpsController.EnableCursorVisibility();
+		fpsController.UnlockCursor();
 	}
 }
