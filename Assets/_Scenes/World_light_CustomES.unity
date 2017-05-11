@@ -1646,8 +1646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections:
   - {fileID: 1916942794}
   - {fileID: 2078863462}
@@ -2648,8 +2646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 1578625234}
 --- !u!114 &564647072
@@ -5508,8 +5504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 337164243}
 --- !u!114 &1315798707
@@ -6046,8 +6040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections:
   - {fileID: 2119281493}
   defaultReactionCollection: {fileID: 1804180026}
@@ -6929,8 +6921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 599483592}
 --- !u!114 &1744773587
@@ -7822,8 +7812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 282671420}
 --- !u!114 &1995495881
@@ -7966,8 +7954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 194012375}
 --- !u!114 &2002669532

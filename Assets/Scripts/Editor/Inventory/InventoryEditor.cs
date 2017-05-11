@@ -7,8 +7,9 @@ public class InventoryEditor : Editor
     private bool[] showItemSlots = new bool[Inventory.numItemSlots];    // Whether the GUI for each Item slot is expanded.
     private SerializedProperty itemImagesProperty;                      // Represents the array of Image components to display the Items.
     private SerializedProperty itemsProperty;                           // Represents the array of Items.
+	private SerializedProperty SavedItemsProperty;
 
-
+	private const string inventoryPropSavedItems = "itemsSaveData";
     private const string inventoryPropItemImagesName = "itemImages";    // The name of the field that is an array of Image components.
     private const string inventoryPropItemsName = "items";              // The name of the field that is an array of Items.
 
@@ -18,14 +19,17 @@ public class InventoryEditor : Editor
         // Cache the SerializedProperties.
         itemImagesProperty = serializedObject.FindProperty (inventoryPropItemImagesName);
         itemsProperty = serializedObject.FindProperty (inventoryPropItemsName);
+		SavedItemsProperty = serializedObject.FindProperty (inventoryPropSavedItems);
     }
 
 
     public override void OnInspectorGUI ()
     {
-        // Pull all the information from the target into the serializedObject.
-        serializedObject.Update ();
+		//shows basic fields
+		DrawDefaultInspector ();
 
+        serializedObject.Update ();
+	
         // Display GUI for each Item slot.
         for (int i = 0; i < Inventory.numItemSlots; i++)
         {

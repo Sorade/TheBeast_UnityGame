@@ -12,12 +12,17 @@ public class SaveToDisk : ScriptableObject {
 		for (int i = 0; i < dataFiles.Length; i++) {
 			dataFiles [i].SaveToDisk ();
 		}
+		Debug.Log ("SavedToDisk");
 	}
 
 
 	public void Load(){
+		Debug.Log ("LoadingFromDisk");
+		CustomEventManager.TriggerEvent ("BeforeLoadSave");
 		for (int i = 0; i < dataFiles.Length; i++) {
 			dataFiles [i].LoadFromDisk ();
 		}
+		CustomEventManager.TriggerEvent ("AfterLoadSave");
+		Debug.Log ("LoadedFromDisk");
 	}
 }

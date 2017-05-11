@@ -1925,8 +1925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 1107838030}
 --- !u!114 &1531057986
@@ -2224,8 +2222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 24112571}
 --- !u!114 &1611822821
@@ -2507,8 +2503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections:
   - {fileID: 305383158}
   defaultReactionCollection: {fileID: 566516287}

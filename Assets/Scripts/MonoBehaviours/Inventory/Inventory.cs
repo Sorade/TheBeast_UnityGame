@@ -1,14 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Inventory : MonoBehaviour
 {
     public Image[] itemImages = new Image[numItemSlots];    // The Image components that display the Items.
-    public Item[] items = new Item[numItemSlots];           // The Items that are carried by the player.
-
+	public Item[] items = new Item[numItemSlots];           // The Items that are carried by the player.
+	public SaveData savedItems;
 
     public const int numItemSlots = 4;                      // The number of items that can be carried.  This is a constant so that the number of Images and Items are always the same.
 
+	void OnEnable(){
+		//clears the inventory on each scene load before the items are loaded by the saver
+		//CustomEventManager.StartListening("BeforeLoadSave", RemoveAll);
+		//CustomEventManager.StartListening("AfterLoadSave", Refresh);
+	}
+
+	void OnDisable(){
+		//CustomEventManager.StopListening("BeforeLoadSave", RemoveAll);
+		//CustomEventManager.StopListening("AfterLoadSave", Refresh);
+	}
 
     // This function is called by the PickedUpItemReaction in order to add an item to the inventory.
     public void AddItem(Item itemToAdd)
@@ -46,4 +57,36 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+	public void RemoveAll (){
+		// Go through all the item slots...
+		for (int i = 0; i < items.Length; i++)
+		{
+			// ... set the item slot to null and set the image component to display nothing.
+			items[i] = null;
+			itemImages[i].sprite = null;
+			itemImages[i].enabled = false;
+		}
+		Debug.Log ("RemoveAll");
+	}
+
+	private void Refresh(){
+		//save the current items
+		//Item[] itemsTemp = Item[items.Length]; 
+		//Array.Copy(items, itemsTemp, items.Length);
+
+		//clear the items list
+		//RemoveAll ();
+
+		//add new loaded items to items[]
+		foreach (var key in savedItems.itemKeyValuePairLists.keys) {
+			Item loadedItem = null;
+
+			if (savedItems.Load (key, ref loadedItem)) {
+				this.AddItem (loadedItem);
+				Debug.Log("note loaded");
+			}
+		}
+		Debug.Log ("refreshed");
+	}
 }

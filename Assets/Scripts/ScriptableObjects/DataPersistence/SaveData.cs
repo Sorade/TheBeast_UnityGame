@@ -79,6 +79,7 @@ public class SaveData : ResettableScriptableObject
     public KeyValuePairLists<string> stringKeyValuePairLists = new KeyValuePairLists<string>();
     public KeyValuePairLists<Vector3> vector3KeyValuePairLists = new KeyValuePairLists<Vector3>();
     public KeyValuePairLists<Quaternion> quaternionKeyValuePairLists = new KeyValuePairLists<Quaternion>();
+	public KeyValuePairLists<Item> itemKeyValuePairLists = new KeyValuePairLists<Item>();
 
     public override void Reset ()
     {
@@ -87,6 +88,7 @@ public class SaveData : ResettableScriptableObject
         stringKeyValuePairLists.Clear ();
         vector3KeyValuePairLists.Clear ();
         quaternionKeyValuePairLists.Clear ();
+		itemKeyValuePairLists.Clear ();
     }
 
 
@@ -136,6 +138,11 @@ public class SaveData : ResettableScriptableObject
         Save(quaternionKeyValuePairLists, key, value);
     }
 
+	public void Save (string key, Item value)
+	{
+		Save(itemKeyValuePairLists, key, value);
+	}
+
 
     // This works the same as the public Save overloads except
     // it calls the generic Load function.
@@ -168,6 +175,11 @@ public class SaveData : ResettableScriptableObject
         return Load (quaternionKeyValuePairLists, key, ref value);
     }
 
+	public bool Load (string key, ref Item value)
+	{
+		return Load (itemKeyValuePairLists, key, ref value);
+	}
+
 
 	//Save/Load to/from disk methods
 	public void SaveToDisk(){
@@ -176,6 +188,7 @@ public class SaveData : ResettableScriptableObject
 		Serializer.Serialize (this.name + "String.dat", stringKeyValuePairLists);
 		Serializer.Serialize (this.name + "Vector3.dat", vector3KeyValuePairLists);
 		Serializer.Serialize (this.name + "Quaternion.dat", quaternionKeyValuePairLists);
+		Serializer.Serialize (this.name + "Item.dat", itemKeyValuePairLists);
 	}
 
 	public void LoadFromDisk(){
@@ -184,6 +197,7 @@ public class SaveData : ResettableScriptableObject
 		Serializer.Deserialize (this.name + "String.dat", ref stringKeyValuePairLists);
 		Serializer.Deserialize(this.name + "Vector3.dat", ref vector3KeyValuePairLists);
 		Serializer.Deserialize(this.name + "Quaternion.dat", ref quaternionKeyValuePairLists);
+		Serializer.Deserialize(this.name + "Item.dat", ref itemKeyValuePairLists);
 	}
 
 	//need to be in an independent class to avoid stack overflows caused by having both the generic and overloaded method accessible
@@ -201,7 +215,7 @@ public class SaveData : ResettableScriptableObject
 		//genereic deserialisation from disk method
 		public static void Deserialize<T>(string filename, ref KeyValuePairLists<T> data)
 		{
-			if (File.Exists (Application.persistentDataPath + "/GameSave/" + filename)) {
+			if (File.Exists (Application.dataPath + "/GameSave/" + filename)) { //Application.persistentDataPath
 				BinaryFormatter bf = new BinaryFormatter ();
 				FileStream file = File.Open(Application.dataPath + "/GameSave/" +  filename, FileMode.Open);
 				data = (KeyValuePairLists<T>) bf.Deserialize (file);
@@ -235,6 +249,11 @@ public class SaveData : ResettableScriptableObject
 			Serialize (filename, data);
 		}
 
+		private void Serialize(string filename, SaveData.KeyValuePairLists<Item> data)
+		{
+			Serialize (filename, data);
+		}
+
 
 		// deserialisation overloads
 		private void Deserialize(string filename, ref KeyValuePairLists<bool> data)
@@ -258,6 +277,11 @@ public class SaveData : ResettableScriptableObject
 		}
 
 		private void Deserialize(string filename, ref KeyValuePairLists<Quaternion> data)
+		{
+			Deserialize (filename, ref data);
+		}
+
+		private void Deserialize(string filename, ref KeyValuePairLists<Item> data)
 		{
 			Deserialize (filename, ref data);
 		}

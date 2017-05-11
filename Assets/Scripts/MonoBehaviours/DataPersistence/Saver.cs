@@ -66,5 +66,5 @@ public abstract class Saver : MonoBehaviour
 
     // This function will be called just after a scene is finished loading.
     // It must call saveData.Load with a ref parameter to get the data out.
-    protected abstract void Load ();
+	protected abstract void Load ();
 }
