@@ -400,8 +400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 114058880243922934}
 --- !u!114 &114184836064403328
@@ -675,8 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 114946203384731456}
 --- !u!114 &114470815949320704
@@ -690,8 +686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLocation: {fileID: 0}
-  interactionDistance: 0
   conditionCollections: []
   defaultReactionCollection: {fileID: 114860272045216206}
 --- !u!114 &114499047952190814
@@ -734,7 +728,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMenu: {fileID: 1304020899808980}
   hoverDectectionDistance: 2
-  delayOnEnter: 1
 --- !u!114 &114621705583598124
 MonoBehaviour:
   m_ObjectHideFlags: 1
