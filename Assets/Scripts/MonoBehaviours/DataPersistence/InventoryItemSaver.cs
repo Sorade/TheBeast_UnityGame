@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class InventoryItemSaver : Saver
 {
-	public Inventory inventory;     // Reference to the GameObject that will have its activity saved from and loaded to.
+	private Inventory inventory;     // Reference to the GameObject that will have its activity saved from and loaded to.
 	public string itemID; // Reference to the Item that will be saved.
 
-	void OnEnable(){
-		//clears the inventory on each scene load before the items are loaded by the saver
-		//CustomEventManager.StartListening("BeforeLoadSave", RemoveAll);
-		CustomEventManager.StartListening("AfterLoadSave", Load);
-	}
-
-	void OnDisable(){
-		//CustomEventManager.StopListening("BeforeLoadSave", RemoveAll);
-		CustomEventManager.StopListening("AfterLoadSave", Load);
+	void Init(){
+		//Fetches the Inventory script from the Persistent scene
+		inventory = FindObjectOfType<Inventory> ();
 	}
 
 	protected override string SetKey()
 	{
-		// Here the key will be based on the name of the gameobject, the gameobject's type and a unique identifier.
-		Debug.Log(itemID + itemID.GetType().FullName + uniqueIdentifier);
+		//workaround to add get the inventory during Awake() call
+		Init ();
+
+		//Here the key will be based on the name of the gameobject, the gameobject's type and a unique identifier.
+		//Debug.Log(itemID + itemID.GetType().FullName + uniqueIdentifier);
 		return itemID + itemID.GetType().FullName + uniqueIdentifier;
 	}
 
@@ -44,7 +41,7 @@ public class InventoryItemSaver : Saver
 	{
 		// Create a variable to be passed by reference to the Load function.
 		string loadedItemID = null;
-		Debug.Log(saveData.itemKeyValuePairLists.keys.ToArray());
+		//Debug.Log(saveData.stringKeyValuePairLists.keys.ToArray());
 		// If the load function returns true then the item can be added.
 		if (saveData.Load (key, ref loadedItemID)) {
 			inventory.AddItem (loadedItemID);

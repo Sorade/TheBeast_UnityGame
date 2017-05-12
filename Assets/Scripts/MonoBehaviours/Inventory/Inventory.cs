@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < itemsID.Length; i++)
         {
             // ... if the item slot is empty...
-            if (itemsID[i] == "")
+            if (itemsID[i].Length == 0)
             {
                 // ... set it to the picked up item and set the image component to display the item's sprite.
 				itemsID[i] = itemToAddID; //itemDictionary.TryGetValue(itemToAddID);
@@ -70,7 +70,7 @@ public class Inventory : MonoBehaviour
 		for (int i = 0; i < itemsID.Length; i++)
 		{
 			// ... set the item slot to null and set the image component to display nothing.
-			itemsID[i] = null;
+			itemsID[i] = "";
 			itemImages[i].sprite = null;
 			itemImages[i].enabled = false;
 		}

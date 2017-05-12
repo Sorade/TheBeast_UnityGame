@@ -28,17 +28,16 @@ public abstract class Saver : MonoBehaviour
         
         // Set the key based on information in inheriting classes.
         key = SetKey ();
+		Debug.Log ("key set");
     }
 
 
     private void OnEnable()
     {
         // Subscribe the Save function to the BeforeSceneUnload event.
-        //sceneController.BeforeSceneUnload += Save;
 		CustomEventManager.StartListening("BeforeSceneUnload", Save);
 
         // Subscribe the Load function to the AfterSceneLoad event.
-        //sceneController.AfterSceneLoad += Load;
 		CustomEventManager.StartListening("AfterSceneLoad", Load);
     }
 
@@ -46,10 +45,9 @@ public abstract class Saver : MonoBehaviour
     private void OnDisable()
     {
         // Unsubscribe the Save function from the BeforeSceneUnloud event.
-        //sceneController.BeforeSceneUnload -= Save;
 		CustomEventManager.StopListening("BeforeSceneUnload", Save);
+
         // Unsubscribe the Load function from the AfterSceneLoad event.
-        //sceneController.AfterSceneLoad -= Load;
 		CustomEventManager.StopListening("AfterSceneLoad", Load);
     }
 

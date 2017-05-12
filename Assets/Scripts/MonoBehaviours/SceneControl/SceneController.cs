@@ -62,10 +62,6 @@ public class SceneController : MonoBehaviour
         // Start fading to black and wait for it to finish before continuing.
         yield return StartCoroutine (Fade (1f));
 
-        // If this event has any subscribers, call it.
-		//if (BeforeSceneUnload != null) //Shoud be able to remove the conditional and use CustomEventManager.TriggerEvent("BeforeSceneUnload")
-        //    BeforeSceneUnload ();
-
 		CustomEventManager.TriggerEvent ("BeforeSceneUnload");
 
         // Unload the current active scene.
@@ -73,10 +69,6 @@ public class SceneController : MonoBehaviour
 
         // Start loading the given scene and wait for it to finish.
         yield return StartCoroutine (LoadSceneAndSetActive (sceneName));
-
-        // If this event has any subscribers, call it.
-		//if (AfterSceneLoad != null)//Shoud be able to remove the conditional and use CustomEventManager.TriggerEvent("AfterSceneUnload")
-        //    AfterSceneLoad ();
 
 		CustomEventManager.TriggerEvent ("AfterSceneLoad");
         
