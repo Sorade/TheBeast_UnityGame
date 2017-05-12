@@ -17,11 +17,11 @@ public class SaveToDisk : ScriptableObject {
 
 
 	public void Load(){
-		CustomEventManager.TriggerEvent ("BeforeLoadSave");
+		//CustomEventManager.TriggerEvent ("BeforeLoadSave");
 		for (int i = 0; i < dataFiles.Length; i++) {
 			dataFiles [i].LoadFromDisk ();
 		}
-		CustomEventManager.TriggerEvent ("AfterLoadSave");
+		//CustomEventManager.TriggerEvent ("AfterLoadSave");
 		Debug.Log ("LoadedFromDisk");
 	}
 }

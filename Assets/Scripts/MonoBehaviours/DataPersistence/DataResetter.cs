@@ -14,6 +14,7 @@ public class DataResetter : MonoBehaviour
 
 	private void Awake ()
     {
+		Debug.Log ("reset");
         // Go through all the scriptable objects and call their Reset function.
 	    for (int i = 0; i < resettableScriptableObjects.Length; i++)
 	    {

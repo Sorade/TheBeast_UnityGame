@@ -7,6 +7,8 @@ public class InventoryItemSaver : Saver
 	private Inventory inventory;     // Reference to the GameObject that will have its activity saved from and loaded to.
 	public string itemID; // Reference to the Item that will be saved.
 
+	private static bool CanResetSaveData = true;
+
 	void Init(){
 		//Fetches the Inventory script from the Persistent scene
 		inventory = FindObjectOfType<Inventory> ();
@@ -21,12 +23,17 @@ public class InventoryItemSaver : Saver
 		return itemID + itemID.GetType().FullName + uniqueIdentifier;
 	}
 
-
 	protected override void Save()
 	{
+		if (CanResetSaveData) {
+			saveData.Reset ();
+			CanResetSaveData = false;
+		}
+
 		for (int i = 0; i < inventory.itemsID.Length; i++) {
 			if (inventory.itemsID[i] == itemID) { //checks the itemID is in the iventory
 				saveData.Save(key, itemID); // saves the itemID if it is and ends the function
+				Debug.Log("Saved " + itemID);
 				return;
 			}
 		}
@@ -35,7 +42,10 @@ public class InventoryItemSaver : Saver
 
 	protected override void Load()
 	{
-		//clear all the inventory before loading it, to avoid duplicating items
+		//enable data resetting for next save on scene change
+		CanResetSaveData = true;
+		
+		//clear all the inventory and SaveData before loading it, to avoid duplicating items
 		inventory.RemoveAll ();
 
 		// Create a variable to be passed by reference to the Load function.
@@ -43,6 +53,7 @@ public class InventoryItemSaver : Saver
 		// If the load function returns true then the itemID can be added.
 		if (saveData.Load (key, ref loadedItemID)) {
 			inventory.AddItem (loadedItemID);
+			Debug.Log ("Added " + loadedItemID);
 		}
 	}
 }
