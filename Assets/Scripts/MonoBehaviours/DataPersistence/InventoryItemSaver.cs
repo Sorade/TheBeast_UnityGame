@@ -27,26 +27,27 @@ public class InventoryItemSaver : Saver
 	{
 		Debug.Log ("save attempt");
 		for (int i = 0; i < inventory.itemsID.Length; i++) {
-			if (inventory.itemsID[i] == itemID) { //checks the item is in the iventory
-				saveData.Save(key, itemID); // saves the item if it is and ends the function
+			if (inventory.itemsID[i] == itemID) { //checks the itemID is in the iventory
+				saveData.Save(key, itemID); // saves the itemID if it is and ends the function
 				Debug.Log("note saved");
 				return;
 			}
 		}
-		inventory.RemoveAll ();
 	}
 
 
 	protected override void Load()
 	{
+		//clear all the inventory before loading it, to avoid duplicating items
+		inventory.RemoveAll ();
+
 		// Create a variable to be passed by reference to the Load function.
 		string loadedItemID = null;
-		//Debug.Log(saveData.stringKeyValuePairLists.keys.ToArray());
-		// If the load function returns true then the item can be added.
+		// If the load function returns true then the itemID can be added.
 		if (saveData.Load (key, ref loadedItemID)) {
 			inventory.AddItem (loadedItemID);
-			Debug.Log("note loaded");
+			//Debug.Log("note loaded");
 		}
-		Debug.Log("note NOT loaded");
+		//Debug.Log("note NOT loaded");
 	}
 }

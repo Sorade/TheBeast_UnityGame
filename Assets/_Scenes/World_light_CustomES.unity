@@ -2931,6 +2931,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465221317603270, guid: cd200704945bed84c9781fe791c6cd53, type: 2}
+      propertyPath: m_Name
+      value: InventorySavers
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd200704945bed84c9781fe791c6cd53, type: 2}
   m_IsPrefabParent: 0
@@ -5325,7 +5329,7 @@ GameObject:
   - component: {fileID: 1291150396}
   - component: {fileID: 1291150397}
   m_Layer: 0
-  m_Name: GameObjectActivitySaver
+  m_Name: GameObjectActivitySavers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

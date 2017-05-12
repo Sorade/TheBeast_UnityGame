@@ -53,5 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueIdentifier: note
   saveData: {fileID: 11400000, guid: 100c4c7711869eb4eaa4dd7171bc36cf, type: 2}
-  inventory: {fileID: 0}
   itemID: note

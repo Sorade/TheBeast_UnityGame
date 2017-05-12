@@ -76,24 +76,4 @@ public class Inventory : MonoBehaviour
 		}
 		Debug.Log ("RemoveAll");
 	}
-
-	/*private void Refresh(){
-		//save the current items
-		//Item[] itemsTemp = Item[items.Length]; 
-		//Array.Copy(items, itemsTemp, items.Length);
-
-		//clear the items list
-		//RemoveAll ();
-
-		//add new loaded items to items[]
-		foreach (var key in savedItems.itemKeyValuePairLists.keys) {
-			Item loadedItem = null;
-
-			if (savedItems.Load (key, ref loadedItem)) {
-				this.AddItem (loadedItem);
-				Debug.Log("note loaded");
-			}
-		}
-		Debug.Log ("refreshed");
-	}*/
 }
