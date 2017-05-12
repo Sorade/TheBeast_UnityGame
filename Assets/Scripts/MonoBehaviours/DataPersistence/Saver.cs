@@ -28,7 +28,6 @@ public abstract class Saver : MonoBehaviour
         
         // Set the key based on information in inheriting classes.
         key = SetKey ();
-		Debug.Log ("key set");
     }
 
 

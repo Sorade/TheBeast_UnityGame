@@ -9,16 +9,15 @@ public class Inventory : MonoBehaviour
 	public AllItems itemDictionary;
 
     public const int numItemSlots = 4;                      // The number of items that can be carried.  This is a constant so that the number of Images and Items are always the same.
+	private static bool inventoryCleared = false;
 
 	void OnEnable(){
-		//clears the inventory on each scene load before the items are loaded by the saver
-		//CustomEventManager.StartListening("BeforeLoadSave", RemoveAll);
-		//CustomEventManager.StartListening("AfterLoadSave", Refresh);
+		//Allows the inventory to be cleared again
+		CustomEventManager.StartListening("BeforeSceneUnload", AllowClearing);
 	}
 
 	void OnDisable(){
-		//CustomEventManager.StopListening("BeforeLoadSave", RemoveAll);
-		//CustomEventManager.StopListening("AfterLoadSave", Refresh);
+		CustomEventManager.StopListening("BeforeSceneUnload", AllowClearing);
 	}
 
     // This function is called by the PickedUpItemReaction in order to add an item to the inventory.
@@ -65,15 +64,27 @@ public class Inventory : MonoBehaviour
         }
     }
 
+	//This function is called by the InventoryItemSavers before loading the items
 	public void RemoveAll (){
-		// Go through all the item slots...
-		for (int i = 0; i < itemsID.Length; i++)
-		{
-			// ... set the item slot to null and set the image component to display nothing.
-			itemsID[i] = "";
-			itemImages[i].sprite = null;
-			itemImages[i].enabled = false;
+		//ensures the inventory is cleared only once per scene change
+		if (!inventoryCleared) {
+			// Go through all the item slots...
+			for (int i = 0; i < itemsID.Length; i++)
+			{
+				// ... set the item slot to null and set the image component to display nothing.
+				itemsID[i] = "";
+				itemImages[i].sprite = null;
+				itemImages[i].enabled = false;
+			}
+
+			//flips switch to ensure the inventory is cleared only once per scene change
+			inventoryCleared = true;
+			Debug.Log ("clear inv");
 		}
-		Debug.Log ("RemoveAll");
+	}
+
+	//before the subsequent loading event the inventory switch is fliped back
+	void AllowClearing(){
+		inventoryCleared = false;
 	}
 }

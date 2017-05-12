@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4440485452514474}
   - component: {fileID: 114626125427921674}
+  - component: {fileID: 114282957234035912}
   m_Layer: 0
   m_Name: InventorySaver
   m_TagString: Untagged
@@ -40,6 +41,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114282957234035912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465221317603270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca67090d6ae3d54f94730aea4bdb3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: pickAxe
+  saveData: {fileID: 11400000, guid: 100c4c7711869eb4eaa4dd7171bc36cf, type: 2}
+  itemID: pickAxe
 --- !u!114 &114626125427921674
 MonoBehaviour:
   m_ObjectHideFlags: 1

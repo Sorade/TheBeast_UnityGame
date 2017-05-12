@@ -7,8 +7,8 @@ using System.Collections.Generic;
 [CreateAssetMenu]
 public class AllItems : ScriptableObject
 {
-	public List<Item> items;                      // All the Conditions that exist in the game.
-	public List<string> itemID;
+	public List<Item> items;                      // All the items that exist in the game.
+	public List<string> itemID;                   // The corresponding item IDs
 
 	private static AllItems instance;              // The singleton instance.
 

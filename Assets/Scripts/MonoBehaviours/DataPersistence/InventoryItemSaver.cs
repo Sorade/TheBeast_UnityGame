@@ -18,18 +18,15 @@ public class InventoryItemSaver : Saver
 		Init ();
 
 		//Here the key will be based on the name of the gameobject, the gameobject's type and a unique identifier.
-		//Debug.Log(itemID + itemID.GetType().FullName + uniqueIdentifier);
 		return itemID + itemID.GetType().FullName + uniqueIdentifier;
 	}
 
 
 	protected override void Save()
 	{
-		Debug.Log ("save attempt");
 		for (int i = 0; i < inventory.itemsID.Length; i++) {
 			if (inventory.itemsID[i] == itemID) { //checks the itemID is in the iventory
 				saveData.Save(key, itemID); // saves the itemID if it is and ends the function
-				Debug.Log("note saved");
 				return;
 			}
 		}
@@ -46,8 +43,6 @@ public class InventoryItemSaver : Saver
 		// If the load function returns true then the itemID can be added.
 		if (saveData.Load (key, ref loadedItemID)) {
 			inventory.AddItem (loadedItemID);
-			//Debug.Log("note loaded");
 		}
-		//Debug.Log("note NOT loaded");
 	}
 }

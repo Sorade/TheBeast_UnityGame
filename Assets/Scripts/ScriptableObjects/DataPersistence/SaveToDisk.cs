@@ -17,7 +17,6 @@ public class SaveToDisk : ScriptableObject {
 
 
 	public void Load(){
-		Debug.Log ("LoadingFromDisk");
 		CustomEventManager.TriggerEvent ("BeforeLoadSave");
 		for (int i = 0; i < dataFiles.Length; i++) {
 			dataFiles [i].LoadFromDisk ();
