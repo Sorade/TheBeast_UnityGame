@@ -1,6 +1,6 @@
 public class LostItemReaction : DelayedReaction
 {
-    public Item item;               // Item to be removed from the Inventory.
+    public string itemID;               // Item to be removed from the Inventory.
 
 
     private Inventory inventory;    // Reference to the Inventory component.
@@ -14,6 +14,6 @@ public class LostItemReaction : DelayedReaction
 
     protected override void ImmediateReaction()
     {
-        inventory.RemoveItem (item);
+        inventory.RemoveItem (itemID);
     }
 }

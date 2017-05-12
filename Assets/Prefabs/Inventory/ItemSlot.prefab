@@ -5,11 +5,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 224: {fileID: 22420724}
-  - 222: {fileID: 22230358}
-  - 114: {fileID: 11461466}
+  - component: {fileID: 22420724}
+  - component: {fileID: 22230358}
+  - component: {fileID: 11461466}
   m_Layer: 5
   m_Name: ItemImage
   m_TagString: Untagged
@@ -22,11 +22,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 224: {fileID: 22466050}
-  - 222: {fileID: 22220842}
-  - 114: {fileID: 11415000}
+  - component: {fileID: 22466050}
+  - component: {fileID: 22220842}
+  - component: {fileID: 11415000}
   m_Layer: 5
   m_Name: BackgroundImage
   m_TagString: Untagged
@@ -39,9 +39,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 224: {fileID: 22480890}
+  - component: {fileID: 22480890}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged

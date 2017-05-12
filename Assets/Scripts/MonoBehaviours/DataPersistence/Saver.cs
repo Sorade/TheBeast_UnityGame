@@ -34,20 +34,20 @@ public abstract class Saver : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe the Save function to the BeforeSceneUnload event.
-        sceneController.BeforeSceneUnload += Save;
+		CustomEventManager.StartListening("BeforeSceneUnload", Save);
 
         // Subscribe the Load function to the AfterSceneLoad event.
-        sceneController.AfterSceneLoad += Load;
+		CustomEventManager.StartListening("AfterSceneLoad", Load);
     }
 
 
     private void OnDisable()
     {
         // Unsubscribe the Save function from the BeforeSceneUnloud event.
-        sceneController.BeforeSceneUnload -= Save;
+		CustomEventManager.StopListening("BeforeSceneUnload", Save);
 
         // Unsubscribe the Load function from the AfterSceneLoad event.
-        sceneController.AfterSceneLoad -= Load;
+		CustomEventManager.StopListening("AfterSceneLoad", Load);
     }
 
 
@@ -63,5 +63,5 @@ public abstract class Saver : MonoBehaviour
 
     // This function will be called just after a scene is finished loading.
     // It must call saveData.Load with a ref parameter to get the data out.
-    protected abstract void Load ();
+	protected abstract void Load ();
 }

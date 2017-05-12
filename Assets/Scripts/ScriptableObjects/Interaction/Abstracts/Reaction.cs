@@ -27,7 +27,6 @@ public abstract class Reaction : ScriptableObject
         ImmediateReaction ();
     }
 
-
     // This is the core of the Reaction and must be overridden to make things happpen.
     protected abstract void ImmediateReaction ();
 }
