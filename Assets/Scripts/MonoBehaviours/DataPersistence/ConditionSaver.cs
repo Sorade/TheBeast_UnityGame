@@ -15,7 +15,6 @@ public class ConditionSaver : Saver {
 	protected override void Save()
 	{
 		saveData.Save(key, condition.satisfied); // saves the itemID if it is and ends the function
-		Debug.Log ("Saved " + condition.description + " as " +condition.satisfied);
 	}
 
 
@@ -26,7 +25,6 @@ public class ConditionSaver : Saver {
 		// If the load function returns true then the itemID can be added.
 		if (saveData.Load (key, ref satisfiedState)) {
 			condition.satisfied = satisfiedState;
-			Debug.Log ("Loaded " + condition.description + " as " +condition.satisfied);
 		}
 	}
 }

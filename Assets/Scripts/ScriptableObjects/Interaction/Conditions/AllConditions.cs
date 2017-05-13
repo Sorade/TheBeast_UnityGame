@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Collections.Generic;
 
 // This script works as a singleton asset.  That means that
@@ -35,7 +35,7 @@ public class AllConditions : ResettableScriptableObject
     }
 
 
-	void NotActive(){ //need to change to OnEnable to generate all the savers on the data controller
+	/*void NotActive(){ //need to change to OnEnable to generate all the savers on the data controller
 		GameObject dataController = GameObject.FindGameObjectWithTag("DataController");
 
 		//avoids duplicating the savers
@@ -52,7 +52,7 @@ public class AllConditions : ResettableScriptableObject
 				savers.Add (saver);
 			}
 		}
-	}
+	}*/
 
     // This function will be called at Start once per run of the game.
     public override void Reset ()

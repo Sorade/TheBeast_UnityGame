@@ -14,6 +14,7 @@ public class PositionSaver : Saver
 
     protected override void Save()
     {
+		Debug.Log (transformToSave.position);
         saveData.Save(key, transformToSave.position);
     }
 

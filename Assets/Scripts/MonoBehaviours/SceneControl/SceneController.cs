@@ -62,7 +62,10 @@ public class SceneController : MonoBehaviour
         // Start fading to black and wait for it to finish before continuing.
         yield return StartCoroutine (Fade (1f));
 
-		CustomEventManager.TriggerEvent ("BeforeSceneUnload");
+		if (SceneManager.GetActiveScene().name != "Main_Menu") {
+			//prevents overwritting things after a Load From Disk and before the next persistent saving
+			CustomEventManager.TriggerEvent ("BeforeSceneUnload");
+		}
 
         // Unload the current active scene.
         yield return SceneManager.UnloadSceneAsync (SceneManager.GetActiveScene ().buildIndex);

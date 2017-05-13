@@ -33,7 +33,6 @@ public class InventoryItemSaver : Saver
 		for (int i = 0; i < inventory.itemsID.Length; i++) {
 			if (inventory.itemsID[i] == itemID) { //checks the itemID is in the iventory
 				saveData.Save(key, itemID); // saves the itemID if it is and ends the function
-				Debug.Log("Saved " + itemID);
 				return;
 			}
 		}
@@ -53,7 +52,6 @@ public class InventoryItemSaver : Saver
 		// If the load function returns true then the itemID can be added.
 		if (saveData.Load (key, ref loadedItemID)) {
 			inventory.AddItem (loadedItemID);
-			Debug.Log ("Added " + loadedItemID);
 		}
 	}
 }
