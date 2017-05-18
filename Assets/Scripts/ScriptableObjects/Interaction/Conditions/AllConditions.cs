@@ -1,4 +1,6 @@
 using UnityEngine;
+//using UnityEditor;
+using System.Collections.Generic;
 
 // This script works as a singleton asset.  That means that
 // it is globally accessible through a static instance
@@ -12,7 +14,7 @@ public class AllConditions : ResettableScriptableObject
 
 
     private const string loadPath = "AllConditions";    // The path within the Resources folder that 
-    
+	private List<ConditionSaver> savers = new List<ConditionSaver>();
 
     public static AllConditions Instance                // The public accessor for the singleton instance.
     {
@@ -32,6 +34,25 @@ public class AllConditions : ResettableScriptableObject
         set { instance = value; }
     }
 
+
+	/*void NotActive(){ //need to change to OnEnable to generate all the savers on the data controller
+		GameObject dataController = GameObject.FindGameObjectWithTag("DataController");
+
+		//avoids duplicating the savers
+		if (dataController.GetComponents<ConditionSaver> ().Length != Instance.conditions.Length) {
+			//when the game starts all the savers for the conditions are created
+			for (int i = 0; i < Instance.conditions.Length; i++) {
+
+
+				ConditionSaver saver = dataController.AddComponent<ConditionSaver> ();
+
+				saver.uniqueIdentifier = Instance.conditions [i].description;
+				saver.condition = Instance.conditions [i];
+				saver.saveData = AssetDatabase.LoadAssetAtPath<SaveData> ("Assets/SaveData/AllConditionSaveData.asset");
+				savers.Add (saver);
+			}
+		}
+	}*/
 
     // This function will be called at Start once per run of the game.
     public override void Reset ()
@@ -74,4 +95,6 @@ public class AllConditions : ResettableScriptableObject
         // Return true if the satisfied states match, false otherwise.
         return globalCondition.satisfied == requiredCondition.satisfied;
     }
+
+
 }

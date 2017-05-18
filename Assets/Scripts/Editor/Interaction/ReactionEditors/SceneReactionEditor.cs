@@ -5,6 +5,6 @@ public class SceneReactionEditor : ReactionEditor
 {
     protected override string GetFoldoutLabel ()
     {
-        return "Scene Reaction";
+		return "Scene Reaction";
     }
 }
