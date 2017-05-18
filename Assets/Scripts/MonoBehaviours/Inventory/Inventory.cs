@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public Image[] itemImages = new Image[numItemSlots];    // The Image components that display the Items.
 	public string[] itemsID = new string[numItemSlots];           // The Items that are carried by the player.
 	public AllItems itemDictionary;
+	public SaveData saveData;                   // Reference to the SaveData scriptable object where the data is stored.
 
     public const int numItemSlots = 4;                      // The number of items that can be carried.  This is a constant so that the number of Images and Items are always the same.
 	private static bool inventoryCleared = false;
@@ -68,6 +69,7 @@ public class Inventory : MonoBehaviour
 	public void RemoveAll (){
 		//ensures the inventory is cleared only once per scene change
 		if (!inventoryCleared) {
+			//saveData.Reset();
 			// Go through all the item slots...
 			for (int i = 0; i < itemsID.Length; i++)
 			{
@@ -79,7 +81,6 @@ public class Inventory : MonoBehaviour
 
 			//flips switch to ensure the inventory is cleared only once per scene change
 			inventoryCleared = true;
-			Debug.Log ("clear inv");
 		}
 	}
 

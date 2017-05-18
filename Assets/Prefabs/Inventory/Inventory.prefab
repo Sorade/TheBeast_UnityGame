@@ -442,6 +442,7 @@ MonoBehaviour:
   - 
   - 
   itemDictionary: {fileID: 11400000, guid: b5e29dcd61842624c8fb0e9fd8aacee3, type: 2}
+  saveData: {fileID: 11400000, guid: 100c4c7711869eb4eaa4dd7171bc36cf, type: 2}
 --- !u!114 &114693350779930506
 MonoBehaviour:
   m_ObjectHideFlags: 1

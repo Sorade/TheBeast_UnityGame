@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 // Instance of this class can be created as assets.
 // Each instance contains collections of data from
@@ -199,7 +200,7 @@ public class SaveData : ResettableScriptableObject
 		Serializer.Deserialize(this.name + "Quaternion.dat", ref quaternionKeyValuePairLists);
 		//Serializer.Deserialize(this.name + "Item.dat", ref itemKeyValuePairLists);
 	}
-
+		
 	//need to be in an independent class to avoid stack overflows caused by having both the generic and overloaded method accessible
 	public class Serializer{
 		
@@ -207,7 +208,25 @@ public class SaveData : ResettableScriptableObject
 		public static void Serialize<T>(string filename, SaveData.KeyValuePairLists<T> data)
 		{
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Create(Application.dataPath + "/GameSave/" + filename); //Application.persistentDataPath
+
+			//adds the surrogate selector to allow system serialization of unity types
+			SurrogateSelector surrogateSelector = new SurrogateSelector();
+			//adds the surrogate selector to allow system serialization of Vector3
+			Vector3SerializationSurrogate vector3SS = new Vector3SerializationSurrogate();
+			//adds the surrogate selector to allow system serialization of Quaternion
+			QuaternionSerializationSurrogate quaternionSS = new QuaternionSerializationSurrogate();
+
+			surrogateSelector.AddSurrogate(typeof(Vector3),new StreamingContext(StreamingContextStates.All),vector3SS);
+			surrogateSelector.AddSurrogate(typeof(Quaternion),new StreamingContext(StreamingContextStates.All),quaternionSS);
+			bf.SurrogateSelector = surrogateSelector;
+
+			string saveDataPath = Application.persistentDataPath + "/GameSave/";
+
+			if (!Directory.Exists(saveDataPath)) {
+				Directory.CreateDirectory(saveDataPath);
+			}
+
+			FileStream file = File.Create(saveDataPath + filename); //Application.persistentDataPath
 			bf.Serialize (file, data);
 			file.Close();
 		}
@@ -215,9 +234,28 @@ public class SaveData : ResettableScriptableObject
 		//genereic deserialisation from disk method
 		public static void Deserialize<T>(string filename, ref KeyValuePairLists<T> data)
 		{
-			if (File.Exists (Application.dataPath + "/GameSave/" + filename)) { //Application.persistentDataPath
+			string saveDataPath = Application.persistentDataPath + "/GameSave/";
+
+			if (!Directory.Exists(saveDataPath)) {
+				Directory.CreateDirectory(saveDataPath);
+			}
+
+
+			if (File.Exists (saveDataPath + filename)) { //Application.persistentDataPath
 				BinaryFormatter bf = new BinaryFormatter ();
-				FileStream file = File.Open(Application.dataPath + "/GameSave/" +  filename, FileMode.Open);
+
+				//adds the surrogate selector to allow system serialization of unity types
+				SurrogateSelector surrogateSelector = new SurrogateSelector();
+				//adds the surrogate selector to allow system serialization of Vector3
+				Vector3SerializationSurrogate vector3SS = new Vector3SerializationSurrogate();
+				//adds the surrogate selector to allow system serialization of Quaternion
+				QuaternionSerializationSurrogate quaternionSS = new QuaternionSerializationSurrogate();
+
+				surrogateSelector.AddSurrogate(typeof(Vector3),new StreamingContext(StreamingContextStates.All),vector3SS);
+				surrogateSelector.AddSurrogate(typeof(Quaternion),new StreamingContext(StreamingContextStates.All),quaternionSS);
+				bf.SurrogateSelector = surrogateSelector;
+
+				FileStream file = File.Open(saveDataPath +  filename, FileMode.Open);
 				data = (KeyValuePairLists<T>) bf.Deserialize (file);
 				file.Close();
 			}

@@ -9,19 +9,18 @@ public class SaveToDisk : ScriptableObject {
 	public SaveData[] dataFiles;
 
 	public void Save(){
+		//iterates through all the SaveData instances added to the dataFiles and SavesToDisk
 		for (int i = 0; i < dataFiles.Length; i++) {
 			dataFiles [i].SaveToDisk ();
 		}
 		Debug.Log ("SavedToDisk");
 	}
 
-
 	public void Load(){
-		CustomEventManager.TriggerEvent ("BeforeLoadSave");
+		//iterates through all the SaveData instances added to the dataFiles and LoadFromDisk
 		for (int i = 0; i < dataFiles.Length; i++) {
 			dataFiles [i].LoadFromDisk ();
 		}
-		CustomEventManager.TriggerEvent ("AfterLoadSave");
 		Debug.Log ("LoadedFromDisk");
 	}
 }

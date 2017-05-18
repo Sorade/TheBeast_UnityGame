@@ -21,7 +21,7 @@ public class InputMonitor : MonoBehaviour {
 			CustomEventManager.TriggerEvent (movementEvent); //triggers the movement event when movement inputs are not 0
 		}
 
-		if (Input.GetKey("return")){
+		if (Input.GetKey("escape")){
 			/*
 			//Application.Quit();
 			SceneReaction loadSceneReaction = ScriptableObject.CreateInstance("SceneReaction") as SceneReaction;
