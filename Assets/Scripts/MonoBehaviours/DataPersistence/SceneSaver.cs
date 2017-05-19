@@ -16,7 +16,6 @@ public class SceneSaver : Saver {
 
 	protected override void Save()
 	{
-		Debug.Log (this.name + sceneName);
 		saveData.Save(key, sceneName);
 	}
 
