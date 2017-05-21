@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class AllConditionsSaverMaker : ScriptableObject {
-
+public class AllConditionsSaverMaker : MonoBehaviour {
+	//
 	public SaveData conditionSaveData; //the SaveData instance in which all the conditions are saved
 	private GameObject conditionSaver; //the condition saver object in the persistent scene
 
-	void OnEnable(){
+	void Awake(){
 		conditionSaver = GameObject.FindGameObjectWithTag ("Condition Saver");
 		Generate ();
 		Debug.Log ("Condition Savers Generated");
@@ -27,10 +26,10 @@ public class AllConditionsSaverMaker : ScriptableObject {
 				saver.condition = AllConditions.Instance.conditions [i];
 				saver.saveData = conditionSaveData;
 				saver.enabled = true;
+				saver.DifferedSetKey ();
 			}
 		}
 	}
-	//
 
 	//removes all the existing savers
 	void RemoveAll(){

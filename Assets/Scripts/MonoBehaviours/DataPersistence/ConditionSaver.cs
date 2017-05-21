@@ -6,11 +6,15 @@ public class ConditionSaver : Saver {
 	public Condition condition ; // Reference to the Item that will be saved.
 
 	protected override string SetKey()
-	{
-		//Here the key will be based on the name of the gameobject, the gameobject's type and a unique identifier.
-		return condition.hash + condition.GetType().FullName + uniqueIdentifier;
+	{		
+		//Here the SetKey() method returns null because when the Saver is instantiated the condition and uniqueIdentifier are not yet set
+		return null;
 	}
 
+	public void DifferedSetKey () {
+		//Here the key will be based on the name of the gameobject, the gameobject's type and a unique identifier.
+		key = condition.hash + condition.GetType().FullName + uniqueIdentifier;
+	}
 
 	protected override void Save()
 	{
