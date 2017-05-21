@@ -14,7 +14,7 @@ public class AllConditions : ResettableScriptableObject
 
 
     private const string loadPath = "AllConditions";    // The path within the Resources folder that 
-	private List<ConditionSaver> savers = new List<ConditionSaver>();
+	//private List<ConditionSaver> savers = new List<ConditionSaver>();
 
     public static AllConditions Instance                // The public accessor for the singleton instance.
     {

@@ -30,7 +30,7 @@ public class AllConditionsSaverMaker : ScriptableObject {
 			}
 		}
 	}
-
+	//
 
 	//removes all the existing savers
 	void RemoveAll(){
