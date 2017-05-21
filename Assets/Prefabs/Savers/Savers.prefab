@@ -75,25 +75,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1366035809632064
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4504562977862718}
-  - component: {fileID: 114372011303825712}
-  - component: {fileID: 114144220403015736}
-  - component: {fileID: 114333577016538414}
-  - component: {fileID: 114694564575203912}
-  m_Layer: 0
-  m_Name: ConditionSavers
-  m_TagString: DataController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4298474039090544
 Transform:
   m_ObjectHideFlags: 1
@@ -105,20 +86,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4781787432467300}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4504562977862718
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366035809632064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4781787432467300}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4586304954675038
 Transform:
@@ -131,7 +99,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4781787432467300}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4781787432467300
 Transform:
@@ -144,7 +112,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4867655300928314}
-  - {fileID: 4504562977862718}
   - {fileID: 4586304954675038}
   - {fileID: 4298474039090544}
   m_Father: {fileID: 0}
@@ -177,36 +144,6 @@ MonoBehaviour:
   uniqueIdentifier: pickAxe
   saveData: {fileID: 11400000, guid: 100c4c7711869eb4eaa4dd7171bc36cf, type: 2}
   itemID: pickAxe
---- !u!114 &114144220403015736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366035809632064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsCalm
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &114333577016538414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366035809632064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: HasPickAxe
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114971820754105870, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
 --- !u!114 &114346438348573036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,21 +158,6 @@ MonoBehaviour:
   uniqueIdentifier: currentPosition
   saveData: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
   transformToSave: {fileID: 0}
---- !u!114 &114372011303825712
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366035809632064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsInpecting
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
 --- !u!114 &114455224128775126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,23 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueIdentifier: currentScene
   saveData: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
-  currentScene: {fileID: 102900000, guid: 2479ecb4f152c354789947456ae521ab, type: 3}
   sceneName: 
---- !u!114 &114694564575203912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366035809632064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: CampfireIsLit
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114760062138116156, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
 --- !u!114 &114965458558852672
 MonoBehaviour:
   m_ObjectHideFlags: 1
