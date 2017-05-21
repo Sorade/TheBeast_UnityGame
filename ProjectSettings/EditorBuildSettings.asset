@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/World_light_CustomES.unity
   - enabled: 1
     path: Assets/_Scenes/Cave.unity
+  - enabled: 1
+    path: Assets/_Scenes/Village.unity
