@@ -35,7 +35,7 @@ public class AllConditions : ResettableScriptableObject
     }
 
 
-	/*void NotActive(){ //need to change to OnEnable to generate all the savers on the data controller
+	/*void OnEnable(){ //need to change to OnEnable to generate all the savers on the data controller
 		GameObject dataController = GameObject.FindGameObjectWithTag("DataController");
 
 		//avoids duplicating the savers
