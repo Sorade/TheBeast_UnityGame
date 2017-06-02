@@ -329,15 +329,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 686100854}
-  - component: {fileID: 686100858}
-  - component: {fileID: 686100857}
-  - component: {fileID: 686100864}
-  - component: {fileID: 686100863}
-  - component: {fileID: 686100862}
-  - component: {fileID: 686100861}
-  - component: {fileID: 686100860}
-  - component: {fileID: 686100859}
-  - component: {fileID: 686100856}
   - component: {fileID: 686100855}
   m_Layer: 0
   m_Name: ConditionSavers
@@ -368,148 +359,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 686100853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
+  m_Script: {fileID: 11500000, guid: 69d9a8bae4813734689c99dab8512ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: CampfireIsLit
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114760062138116156, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: HasPickAxe
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114971820754105870, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsCalm
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsInpecting
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsCalm
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsInpecting
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: CampfireIsLit
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114760062138116156, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: HasPickAxe
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114971820754105870, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsCalm
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsInpecting
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
+  conditionSaveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
 --- !u!1001 &970611204
 Prefab:
   m_ObjectHideFlags: 0
@@ -1028,7 +881,7 @@ Prefab:
     - target: {fileID: 224163916060232834, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -67.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224163916060232834, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1038,7 +891,7 @@ Prefab:
     - target: {fileID: 224163916060232834, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224050690321450032, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1058,7 +911,7 @@ Prefab:
     - target: {fileID: 224050690321450032, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -222.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224050690321450032, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1068,7 +921,7 @@ Prefab:
     - target: {fileID: 224050690321450032, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224277823147438508, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1088,7 +941,7 @@ Prefab:
     - target: {fileID: 224277823147438508, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -377.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224277823147438508, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1098,7 +951,7 @@ Prefab:
     - target: {fileID: 224277823147438508, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224161948810164754, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1118,7 +971,7 @@ Prefab:
     - target: {fileID: 224161948810164754, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -532.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224161948810164754, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
@@ -1128,7 +981,7 @@ Prefab:
     - target: {fileID: 224161948810164754, guid: 155d1c573a9feae408b7e7eee6a4b1d0,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 135
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 155d1c573a9feae408b7e7eee6a4b1d0, type: 2}
