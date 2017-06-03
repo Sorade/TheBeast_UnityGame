@@ -36,7 +36,6 @@ public class LookAtOnClick : MonoBehaviour {
 	}
 
 	private void LookAtItem(){
-			Debug.Log(Camera.main.transform.position + "_" + secondaryCam.GetComponent<Transform> ().position);
 			secondaryCam.GetComponent<Transform> ().position = Camera.main.transform.position;
 			secondaryCam.GetComponent<Transform> ().rotation = Camera.main.transform.rotation;
 			secondaryCam.GetComponent<Camera> ().fieldOfView = Camera.main.fieldOfView;
@@ -59,7 +58,7 @@ public class LookAtOnClick : MonoBehaviour {
 		float zoomCovered = 0f;
 		float rotCovered = 0f;
 
-		while (((secondaryCam.GetComponent<Transform> ().position != (trans.position + trans.forward * offsetFromCam)) || (secondaryCam.GetComponent<Transform> ().rotation != targetRotation) || (secondaryCam.GetComponent<Camera>().fieldOfView != zoomFOV)) && timeElapsed < 2.5f) {
+		while ((((secondaryCam.GetComponent<Transform> ().position != (trans.position + trans.forward * offsetFromCam)) || (secondaryCam.GetComponent<Transform> ().rotation != targetRotation) || (secondaryCam.GetComponent<Camera>().fieldOfView != zoomFOV))) && timeElapsed < 2.5f) {
 			distCovered += Time.deltaTime * lookAtSpeed;
 			secondaryCam.GetComponent<Transform> ().position = Vector3.Lerp (startPos, trans.position + trans.forward * offsetFromCam, distCovered);
 
