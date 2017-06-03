@@ -67,7 +67,6 @@ public class LookAtOnClick : MonoBehaviour {
 			rotCovered += Time.deltaTime * rotateSpeed;
 			Vector3 relativePosition =  trans.position - secondaryCam.GetComponent<Transform> ().position;
 			targetRotation = Quaternion.LookRotation (relativePosition, upDirection);
-			targetRotation = Quaternion.LookRotation (relativePosition, trans.position.normalized);
 			secondaryCam.GetComponent<Transform> ().rotation = Quaternion.Slerp (startRotation, targetRotation, rotCovered);
 			//Debug.Log("rot" + (secondaryCam.GetComponent<Transform> ().rotation != targetRotation));
 
