@@ -5,8 +5,8 @@ using UnityEngine;
 public class DigitWheel : MonoBehaviour {
 
 	private float speed = 1f;
-	[HideInInspector]
-	public int currentValue = 1;
+	//[HideInInspector]
+	public int currentValue = 0;
 
 	public void PositiveIncrement () {
 		StartCoroutine(Rotate (1f));
@@ -17,15 +17,27 @@ public class DigitWheel : MonoBehaviour {
 	}
 
 
-	IEnumerator Rotate (float sign) {		
-
+	IEnumerator Rotate (float sign) {
+		Debug.Log (currentValue);
+		UpdateValue ((int)sign);
+		Debug.Log (currentValue);
 		float startTime = Time.time;
 
 		while (startTime + speed - Time.time  > 0f) {
 			transform.Rotate (Vector3.up * 36f * Time.deltaTime * sign, Space.Self);
 			yield return null;
 		}
+	}
 
-		currentValue += (int)sign;
+	void UpdateValue(int sign){
+		if (currentValue == 0 && sign < 0) {
+			currentValue = 10;
+		} else {
+			if (currentValue == 9 && sign > 0) {
+				currentValue = -1;
+			}
+		}
+
+		currentValue += sign;
 	}
 }

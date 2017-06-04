@@ -2,7 +2,7 @@
 
 public class MessageReaction : DelayedReaction
 {
-	public GameObject gameObject;       // The gameobject to be turned on or off.
+	public GameObject gameObject;       // The gameobject to be sent the message
 	public string message;            // The message to send to the gameObject.
 
 

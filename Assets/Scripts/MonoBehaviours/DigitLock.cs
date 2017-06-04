@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class DigitLock : MonoBehaviour {
 
+	public int[] code;
 	public DigitWheel[] wheels;
 
 	void Start(){
 		wheels = GetComponentsInChildren<DigitWheel> ();
+	}
+
+	//Check if the combination of the wheels matches the code
+	public bool Check(){
+		for (int i = 0; i < wheels.Length; i++) {
+			if (wheels[i].currentValue != code[i]) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	// Use this for initialization

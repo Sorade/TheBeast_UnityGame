@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 686100859}
   - component: {fileID: 686100856}
   - component: {fileID: 686100855}
+  - component: {fileID: 686100865}
   m_Layer: 0
   m_Name: ConditionSavers
   m_TagString: Condition Saver
@@ -509,6 +510,21 @@ MonoBehaviour:
   uniqueIdentifier: IsInpecting
   saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
   condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
+    type: 2}
+--- !u!114 &686100865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686100853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: ChestOpen
+  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
+  condition: {fileID: 114042816232146938, guid: fd02464d008c790478d9826aba7c7847,
     type: 2}
 --- !u!1001 &970611204
 Prefab:
