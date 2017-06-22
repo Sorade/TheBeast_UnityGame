@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System;
 
 // This is the base class for all Reactions.
 // There are arrays of inheriting Reactions on ReactionCollections.
+[Serializable]
 public abstract class Reaction : ScriptableObject
 {
     // This is called from ReactionCollection.

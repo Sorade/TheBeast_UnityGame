@@ -136,6 +136,9 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
             Type reactionType = reactionTypes[selectedIndex];
             Reaction newReaction = ReactionEditor.CreateReaction (reactionType);
             reactionsProperty.AddToObjectArray (newReaction);
+			// Adds the reaction to the Assets
+			AssetDatabase.CreateAsset(newReaction, "Assets/ReactionInstances/test1");
+			Debug.Log("Assets/ReactionInstances");
         }
     }
 

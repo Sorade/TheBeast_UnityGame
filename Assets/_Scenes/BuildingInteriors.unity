@@ -4794,6 +4794,48 @@ MonoBehaviour:
   message: Check
   condition: {fileID: 114042816232146938, guid: fd02464d008c790478d9826aba7c7847,
     type: 2}
+--- !u!1001 &621282151
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.6912117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.535324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.8503711
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &631957676
 GameObject:
   m_ObjectHideFlags: 0
@@ -6232,6 +6274,52 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875466918}
+--- !u!1001 &880710877
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.6912117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.535324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.8503711
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670961577049826, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050401427784570, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+      propertyPath: m_Name
+      value: test (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4ecba6edb3735ed4685096771fded757, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &881562666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6725,6 +6813,7 @@ MonoBehaviour:
   message: Hum... the code is invalid
   textColor: {r: 1, g: 1, b: 1, a: 1}
   delay: 0
+  textManager: {fileID: 0}
 --- !u!1 &1019426674
 GameObject:
   m_ObjectHideFlags: 0
