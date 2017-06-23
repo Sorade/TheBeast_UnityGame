@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 
 // This is the Editor for the ReactionCollection MonoBehaviour.
-// However, since the ReactionCollection contains many Reactions, 
+// However, since the ReactionCollection contains many Reactions,
 // it requires many sub-editors to display them.
 // For more details see the EditorWithSubEditors class.
 // There are two ways of adding Reactions to the ReactionCollection:
@@ -134,10 +134,10 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
         {
             // ... finds the type selected by the popup, creates an appropriate reaction and adds it to the array.
             Type reactionType = reactionTypes[selectedIndex];
-            Reaction newReaction = ReactionEditor.CreateReaction (reactionType);
+            Reaction newReaction = ReactionEditor.CreateReaction (target, reactionType);
             reactionsProperty.AddToObjectArray (newReaction);
 			// Adds the reaction to the Assets
-			AssetDatabase.CreateAsset(newReaction, "Assets/ReactionInstances/test1");
+			//AssetDatabase.CreateAsset(newReaction, "Assets/ReactionInstances/test1");
 			Debug.Log("Assets/ReactionInstances");
         }
     }
@@ -179,10 +179,10 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
 
             // If the mouse was dragging something and has released...
             case EventType.DragPerform:
-                
+
                 // ... accept the drag event.
                 DragAndDrop.AcceptDrag();
-                
+
                 // Go through all the objects that were being dragged...
                 for (int i = 0; i < DragAndDrop.objectReferences.Length; i++)
                 {
@@ -193,7 +193,7 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
                     Type reactionType = script.GetClass();
 
                     // ... and create a Reaction of that type and add it to the array.
-                    Reaction newReaction = ReactionEditor.CreateReaction (reactionType);
+                    Reaction newReaction = ReactionEditor.CreateReaction (null, reactionType);
                     editor.reactionsProperty.AddToObjectArray (newReaction);
                 }
 
@@ -213,7 +213,7 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
             // ... and if any of them are not script assets, return that the drag is invalid.
             if (DragAndDrop.objectReferences[i].GetType () != typeof (MonoScript))
                 return false;
-            
+
             // Otherwise find the class contained in the script asset.
             MonoScript script = DragAndDrop.objectReferences[i] as MonoScript;
             Type scriptType = script.GetClass ();

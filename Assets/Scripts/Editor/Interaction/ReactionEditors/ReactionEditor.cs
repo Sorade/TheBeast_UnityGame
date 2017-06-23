@@ -37,17 +37,17 @@ public abstract class ReactionEditor : Editor
         EditorGUI.indentLevel++;
 
         EditorGUILayout.BeginHorizontal ();
-        
+
         // Display a foldout for the Reaction with a custom label.
         showReaction = EditorGUILayout.Foldout (showReaction, GetFoldoutLabel ());
-        
+
         // Show a button which, if clicked, will remove this Reaction from the ReactionCollection.
         if (GUILayout.Button ("-", GUILayout.Width (buttonWidth)))
         {
             reactionsProperty.RemoveFromObjectArray (reaction);
         }
         EditorGUILayout.EndHorizontal ();
-        
+
         // If the foldout is open, draw the GUI specific to the inheriting ReactionEditor.
         if (showReaction)
         {
@@ -62,10 +62,13 @@ public abstract class ReactionEditor : Editor
     }
 
 
-    public static Reaction CreateReaction (Type reactionType)
+    public static Reaction CreateReaction (UnityEngine.Object target, Type reactionType)
     {
         // Create a reaction of a given type.
-        return (Reaction)CreateInstance (reactionType);
+        Debug.Log(target.name);
+        Debug.Log(target.GetType().ToString());
+        Reaction toto = ((ReactionCollection)target).gameObject.AddComponent(reactionType) as Reaction;
+        return toto; //(Reaction)CreateInstance (reactionType);
     }
 
 

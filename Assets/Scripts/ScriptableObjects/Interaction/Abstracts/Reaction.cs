@@ -4,7 +4,7 @@ using System;
 // This is the base class for all Reactions.
 // There are arrays of inheriting Reactions on ReactionCollections.
 [Serializable]
-public abstract class Reaction : ScriptableObject
+public abstract class Reaction : MonoBehaviour
 {
     // This is called from ReactionCollection.
     // This function contains everything that is required to be done for all
