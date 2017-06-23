@@ -193,7 +193,7 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
                     Type reactionType = script.GetClass();
 
                     // ... and create a Reaction of that type and add it to the array.
-                    Reaction newReaction = ReactionEditor.CreateReaction (null, reactionType);
+                    Reaction newReaction = ReactionEditor.CreateReaction (editor.target, reactionType);
                     editor.reactionsProperty.AddToObjectArray (newReaction);
                 }
 

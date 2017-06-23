@@ -65,10 +65,25 @@ public abstract class ReactionEditor : Editor
     public static Reaction CreateReaction (UnityEngine.Object target, Type reactionType)
     {
         // Create a reaction of a given type.
-        Debug.Log(target.name);
-        Debug.Log(target.GetType().ToString());
-        Reaction toto = ((ReactionCollection)target).gameObject.AddComponent(reactionType) as Reaction;
-        return toto; //(Reaction)CreateInstance (reactionType);
+
+        // Getting the containing GameObject.
+        GameObject collectionObject = ((ReactionCollection)target).gameObject;
+
+        // Checking if there is a Reaction Container.
+        Transform tmp = collectionObject.transform.Find("ReactionContainer");
+        GameObject container;
+
+        if(tmp != null) // The element exists, we get its gameobject.
+            container = tmp.gameObject;
+        else
+        { // The element does not exist yet, we create it.
+            container = new GameObject("ReactionContainer");
+            // We want the crated object to be a child of the current object.
+            container.transform.parent = collectionObject.transform;
+        }
+
+        // Finally adding the Reaction and returning it
+        return container.AddComponent(reactionType) as Reaction;
     }
 
 
