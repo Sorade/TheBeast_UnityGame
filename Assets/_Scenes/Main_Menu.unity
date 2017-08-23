@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731316, g: 0.38074902, b: 0.3587254, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -599,7 +599,6 @@ GameObject:
   - component: {fileID: 916282512}
   - component: {fileID: 916282511}
   - component: {fileID: 916282510}
-  - component: {fileID: 916282513}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -653,25 +652,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &916282513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 916282509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4479da127e0249d1b4831bd6db5f757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  valueGuid: b9c7a2adf2208b48a062b9df04baaea4
-  bankName: MainTitle
-  loadAsynchronous: 0
-  decodeBank: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
 --- !u!1 &1003102457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1422,7 @@ GameObject:
   - component: {fileID: 2007217229}
   - component: {fileID: 2007217228}
   - component: {fileID: 2007217227}
+  - component: {fileID: 2007217231}
   m_Layer: 0
   m_Name: Wwise_MX
   m_TagString: Untagged
@@ -1521,6 +1502,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2007217231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2007217226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4479da127e0249d1b4831bd6db5f757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  valueGuid: b9c7a2adf2208b48a062b9df04baaea4
+  bankName: MainTitle
+  loadAsynchronous: 0
+  decodeBank: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
 --- !u!1 &2129628778
 GameObject:
   m_ObjectHideFlags: 0
