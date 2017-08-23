@@ -63,7 +63,8 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID MAINTITLE = 2189086104U;
+        static const AkUniqueID MAINTITLE_MAC = 1108284072U;
+        static const AkUniqueID MAINTITLE_WINDOWS = 3939530942U;
     } // namespace BANKS
 
     namespace BUSSES
