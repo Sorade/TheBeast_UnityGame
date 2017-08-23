@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	411774133	MainTitle_Start			\Default Work Unit\MainTitle_Start	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1046221	Trk_MainTitle_Var1_01	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_MainTitle_Var1.1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_MainTitle_Var1\Trk_MainTitle_Var1_01		10447384
+	183209162	Trk_MainTitle_Var3	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_MainTitle_Var3_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_MainTitle_var3\Trk_MainTitle_Var3		12732880
+	348976064	Trk_MainTitle_var2_01	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_MainTitle_Var2.1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_MainTitle_Var2\Trk_MainTitle_var2_01		22256172
+	720732325	Trk_Silence_1Bar	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_Silence_3Bars_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_Silence_1bar\Trk_Silence_1Bar		1536064
+	859975076	Trk_MainTitle_Var1	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_MainTitle_Var1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_MainTitle_Var1\Trk_MainTitle_Var1		9472064
+	955338992	Trk_MainTitle_Var3_01	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_MainTitle_Var3.1_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_MainTitle_var3\Trk_MainTitle_Var3_01		13068924
+	959055319	Trk_MainTitle_var2	Y:\Documents\WwiseProjects\TheBeast_MX\.cache\Windows\SFX\Trk_MainTitle_Var2_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Title\PLT_MainTitle\SEG_MainTitle_Var2\Trk_MainTitle_var2		21570112
+

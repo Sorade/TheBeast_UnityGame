@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
+	<RootPaths>
+		<ProjectRoot>/Users/maxime/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/TheBeast_MX/</ProjectRoot>
+		<SourceFilesRoot>/Users/maxime/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/TheBeast_MX/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/maxime/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/TheBeast_MX/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/maxime/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/TheBeast_MX/GeneratedSoundBanks/Windows/</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2189086104" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\MainTitle</ObjectPath>
+			<ShortName>MainTitle</ShortName>
+			<Path>MainTitle.bnk</Path>
+			<IncludedEvents>
+				<Event Id="411774133" Name="MainTitle_Start" ObjectPath="\Events\Default Work Unit\MainTitle_Start"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="1046221" Language="SFX">
+					<ShortName>Trk_MainTitle_Var1.1.wav</ShortName>
+					<Path>SFX/Trk_MainTitle_Var1.1_F17FB28C.wem</Path>
+				</File>
+				<File Id="183209162" Language="SFX">
+					<ShortName>Trk_MainTitle_Var3.wav</ShortName>
+					<Path>SFX/Trk_MainTitle_Var3_F17FB28C.wem</Path>
+				</File>
+				<File Id="348976064" Language="SFX">
+					<ShortName>Trk_MainTitle_Var2.1.wav</ShortName>
+					<Path>SFX/Trk_MainTitle_Var2.1_F17FB28C.wem</Path>
+				</File>
+				<File Id="720732325" Language="SFX">
+					<ShortName>Trk_Silence_3Bars.wav</ShortName>
+					<Path>SFX/Trk_Silence_3Bars_F17FB28C.wem</Path>
+				</File>
+				<File Id="859975076" Language="SFX">
+					<ShortName>Trk_MainTitle_Var1.wav</ShortName>
+					<Path>SFX/Trk_MainTitle_Var1_F17FB28C.wem</Path>
+				</File>
+				<File Id="955338992" Language="SFX">
+					<ShortName>Trk_MainTitle_Var3.1.wav</ShortName>
+					<Path>SFX/Trk_MainTitle_Var3.1_F17FB28C.wem</Path>
+				</File>
+				<File Id="959055319" Language="SFX">
+					<ShortName>Trk_MainTitle_Var2.wav</ShortName>
+					<Path>SFX/Trk_MainTitle_Var2_F17FB28C.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
