@@ -234,10 +234,6 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TheBeast_MX
-  - /TheBeast_MX/Events
-  - /TheBeast_MX/Events/Default Work Unit
-  - /TheBeast_MX/SoundBanks
-  - /TheBeast_MX/SoundBanks/Default Work Unit
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1
