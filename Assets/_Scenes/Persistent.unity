@@ -42,7 +42,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faderCanvasGroup: {fileID: 1708470355}
   fadeDuration: 1
-  startingSceneName: Main_Menu
+  startingSceneName: MaisonOncle
   initialStartingPositionName: InitialPos
   playerSaveData: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
 --- !u!4 &353158847
@@ -331,14 +331,8 @@ GameObject:
   - component: {fileID: 686100854}
   - component: {fileID: 686100858}
   - component: {fileID: 686100857}
-  - component: {fileID: 686100864}
-  - component: {fileID: 686100863}
   - component: {fileID: 686100862}
   - component: {fileID: 686100861}
-  - component: {fileID: 686100860}
-  - component: {fileID: 686100859}
-  - component: {fileID: 686100856}
-  - component: {fileID: 686100855}
   - component: {fileID: 686100865}
   m_Layer: 0
   m_Name: ConditionSavers
@@ -361,36 +355,6 @@ Transform:
   m_Father: {fileID: 1898236084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &686100855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: CampfireIsLit
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114760062138116156, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: HasPickAxe
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114971820754105870, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
 --- !u!114 &686100857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,36 +371,6 @@ MonoBehaviour:
   condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
     type: 2}
 --- !u!114 &686100858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsInpecting
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsCalm
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -480,36 +414,6 @@ MonoBehaviour:
   uniqueIdentifier: HasPickAxe
   saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
   condition: {fileID: 114971820754105870, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsCalm
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114528607520137934, guid: fd02464d008c790478d9826aba7c7847,
-    type: 2}
---- !u!114 &686100864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686100853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c701e1c0f897a84c86b5cde0060bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: IsInpecting
-  saveData: {fileID: 11400000, guid: f67ef76e58e884647ae259a56222c4cc, type: 2}
-  condition: {fileID: 114080648729898064, guid: fd02464d008c790478d9826aba7c7847,
     type: 2}
 --- !u!114 &686100865
 MonoBehaviour:
