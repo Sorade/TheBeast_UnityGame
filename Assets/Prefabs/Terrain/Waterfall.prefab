@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 6400000}
   - component: {fileID: 2300000}
-  - component: {fileID: 11400000}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigWaterBot
   m_TagString: Untagged
@@ -30,7 +29,6 @@ GameObject:
   - component: {fileID: 3300002}
   - component: {fileID: 2300002}
   - component: {fileID: 11100000}
-  - component: {fileID: 11400002}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigWater
   m_TagString: Untagged
@@ -136,7 +134,6 @@ GameObject:
   - component: {fileID: 3300004}
   - component: {fileID: 2300004}
   - component: {fileID: 11100002}
-  - component: {fileID: 11400004}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigSpit
   m_TagString: Untagged
@@ -803,45 +800,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: 0.7
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: 0.3
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: 0.35
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

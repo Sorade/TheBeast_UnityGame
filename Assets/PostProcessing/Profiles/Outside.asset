@@ -35,7 +35,7 @@ MonoBehaviour:
       fxaaSettings:
         preset: 2
       taaSettings:
-        jitterSpread: 0.75
+        jitterSpread: 0.1
         sharpen: 0.3
         stationaryBlending: 0.95
         motionBlending: 0.85
@@ -79,7 +79,7 @@ MonoBehaviour:
   motionBlur:
     m_Enabled: 1
     m_Settings:
-      shutterAngle: 270
+      shutterAngle: 192
       sampleCount: 10
       frameBlending: 0
   eyeAdaptation:
