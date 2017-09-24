@@ -2,8 +2,8 @@
 
 public interface AudioHandler
 {
-	void PlayJump ();
-	void Playland ();
-	void PlayWalk ();
+	// void PlayJump ();
+	// void Playland ();
+	// void PlayWalk ();
 	void Play (string soundName);
 }
