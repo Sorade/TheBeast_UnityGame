@@ -41,6 +41,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private AudioHandler m_audioHandler;
 
         // Use this for initialization
         private void Start()
@@ -54,6 +55,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
+            m_audioHandler = GetComponent<AudioHandler>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 			//added by Julien
 			Cursor.visible = true;
@@ -102,8 +104,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
-            m_AudioSource.clip = m_LandSound;
-            m_AudioSource.Play();
+            // m_AudioSource.clip = m_LandSound;
+            // m_AudioSource.Play();
+            if(m_audioHandler != null)
+                m_audioHandler.Play("land");
             m_NextStep = m_StepCycle + .5f;
         }
 
@@ -153,8 +157,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
-            m_AudioSource.clip = m_JumpSound;
-            m_AudioSource.Play();
+            // m_AudioSource.clip = m_JumpSound;
+            // m_AudioSource.Play();
+            if(m_audioHandler != null)
+                m_audioHandler.Play("jump");
         }
 
 
